@@ -101,70 +101,156 @@ class _WeatherPageState extends State<WeatherPage> {
                               data.city,
                               style: const TextStyle(
                                 fontSize: 50,
-                                fontWeight: FontWeight.bold,// Adjust the font size as needed
+                                fontWeight: FontWeight.bold,
                                 color: Colors.white,
-                                // Add other text style properties if needed
                               ),
                             ),
-                            SizedBox(height: 25), // Add spacing between temperature and wind speed
+                            SizedBox(height: 25),
                             const Text(
                               "Status",
                               style: TextStyle(
                                 fontSize: 25,
-                                fontWeight: FontWeight.bold,// Adjust the font size as needed
+                                fontWeight: FontWeight.bold,
                                 color: Colors.white,
-                                // Add other text style properties if needed
                               ),
                             ),
-                            SizedBox(height:10),
-                            Text(
-                              data.desc,
-                              style: const TextStyle(
-                                fontSize: 25,
-                                fontWeight: FontWeight.bold,// Adjust the font size as needed
-                                color: Colors.white,
-                                // Add other text style properties if needed
-                              ),
-                            ),
-                            SizedBox(height: 25),
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.center,
+                            SizedBox(height: 10),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
                               children: [
-                                SizedBox(height: 25), // Add spacing between temperature and wind speed
-                                const Text(
-                                  "Temperature",
-                                  style: TextStyle(
+                                Icon(
+                                  Icons.cloud,
+                                  color: Colors.white,
+                                  size: 30,
+                                ),
+                                SizedBox(width: 10),
+                                Text(
+                                  data.desc,
+                                  style: const TextStyle(
                                     fontSize: 25,
-                                    fontWeight: FontWeight.bold,// Adjust the font size as needed
+                                    fontWeight: FontWeight.bold,
                                     color: Colors.white,
-                                    // Add other text style properties if needed
                                   ),
                                 ),
-                                SizedBox(height: 10),
+                              ],
+                            ),
+                            SizedBox(height: 25),
+                            const Text(
+                              "Temperature",
+                              style: TextStyle(
+                                fontSize: 25,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white,
+                              ),
+                            ),
+                            SizedBox(height: 10),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Icon(
+                                  Icons.thermostat,
+                                  color: Colors.white,
+                                  size: 30,
+                                ),
+                                SizedBox(width: 10),
                                 Text(
                                   "${data.temp}°C",
                                   style: f42Rwhitebold,
                                 ),
-                                SizedBox(height: 25), // Add spacing between temperature and wind speed
-                                const Text(
-                                  "Wind Speed",
-                                  style: TextStyle(
-                                    fontSize: 25,
-                                    fontWeight: FontWeight.bold,// Adjust the font size as needed
-                                    color: Colors.white,
-                                    // Add other text style properties if needed
-                                  ),
+                              ],
+                            ),
+                            SizedBox(height: 25),
+                            const Text(
+                              "Wind Speed",
+                              style: TextStyle(
+                                fontSize: 25,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white,
+                              ),
+                            ),
+                            SizedBox(height: 10),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Icon(
+                                  Icons.speed,
+                                  color: Colors.white,
+                                  size: 30,
                                 ),
-                                SizedBox(height: 10),
+                                SizedBox(width: 10),
                                 Text(
-                                  "${data.windSpeed} km/h", // You can format it as needed
+                                  "${data.windSpeed} km/h",
                                   style: f42Rwhitebold,
+                                ),
+                              ],
+                            ),
+                            SizedBox(height: 25),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    const Text(
+                                      "Pressure",
+                                      style: TextStyle(
+                                        fontSize: 25,
+                                        fontWeight: FontWeight.bold,
+                                        color: Colors.white,
+                                      ),
+                                    ),
+                                    SizedBox(height: 10),
+                                    Row(
+                                      children: [
+                                        Icon(
+                                          Icons.air_rounded,
+                                          color: Colors.white,
+                                          size: 30,
+                                        ),
+                                        SizedBox(width: 10),
+                                        Text(
+                                          "${data.pressure}", // You can format it as needed
+                                          style: f42Rwhitebold,
+                                        ),
+                                      ],
+                                    ),
+                                  ],
+                                ),
+                                Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    const Text(
+                                      "Humidity",
+                                      style: TextStyle(
+                                        fontSize: 25,
+                                        fontWeight: FontWeight.bold,
+                                        color: Colors.white,
+                                      ),
+                                    ),
+                                    SizedBox(height: 10),
+                                    Row(
+                                      children: [
+                                        Icon(
+                                          Icons.water_drop,
+                                          color: Colors.white,
+                                          size: 30,
+                                        ),
+                                        SizedBox(width: 10),
+                                        Text(
+                                          "${data.humidity}", // You can format it as needed
+                                          style: f42Rwhitebold,
+                                        ),
+                                      ],
+                                    ),
+                                  ],
                                 ),
                               ],
                             ),
                           ],
                         ),
                       ),
+
+
 
 
                     ],
